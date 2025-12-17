@@ -5,186 +5,110 @@ The system supports multiple user roles with clearly separated responsibilities 
 
 📌 Features Overview
 🔐 Authentication
-
-User registration and login
-
-Role-based access control
+- User registration and login
+- Role-based access control
 
 👥 User Roles
-
-Customer
-
-Admin
-
-Receptionist
-
-Laundry Staff
+- Customer
+- Admin
+- Receptionist
+- Laundry Staff
 
 Each role has access only to features relevant to their responsibilities.
 
 🧱 Architecture
-
 This project follows the MVC Pattern:
 
-Model Layer
-
+Model Layer,
 Handles business logic and database operations.
+- UserModel – User authentication and role management
+- ServiceModel – Laundry service catalog
+- TransactionModel – Transaction lifecycle management
+- NotificationModel – User notifications
 
-UserModel – User authentication and role management
-
-ServiceModel – Laundry service catalog
-
-TransactionModel – Transaction lifecycle management
-
-NotificationModel – User notifications
-
-View Layer
-
+View Layer,
 Handles UI rendering using JavaFX.
+- LoginView, RegisterView – Authentication interfaces
+- CustomerView – Customer dashboard and transactions
+- AdminView – Service and employee management
+- ReceptionistView – Transaction assignment interface
+- StaffView – Laundry staff task dashboard
 
-LoginView, RegisterView – Authentication interfaces
-
-CustomerView – Customer dashboard and transactions
-
-AdminView – Service and employee management
-
-ReceptionistView – Transaction assignment interface
-
-StaffView – Laundry staff task dashboard
-
-Controller Layer
-
+Controller Layer,
 Acts as the intermediary between View and Model.
-
-LoginController – Login validation
-
-RegisterController – User registration validation
-
-CustomerController – Customer transactions & notifications
-
-AdminController – Services, employees, and monitoring
-
-ReceptionistController – Staff assignment
-
-StaffController – Task completion
+- LoginController – Login validation
+- RegisterController – User registration validation
+- CustomerController – Customer transactions & notifications
+- AdminController – Services, employees, and monitoring
+- ReceptionistController – Staff assignment
+- StaffController – Task completion
 
 🗄️ Database
-
 Database: MySQL
-
 Connection Handling: Singleton pattern (Connect class)
-
 Access Method: JDBC (PreparedStatement where applicable)
 
 Key Tables
-
-Users
-
-Services
-
-Transactions
-
-Notifications
+- Users
+- Services
+- Transactions
+- Notifications
 
 👤 User Roles & Features
 Customer
-
-Create new laundry transactions
-
-View transaction history
-
-Read and manage notifications
+- Create new laundry transactions
+- View transaction history
+- Read and manage notifications
 
 Admin
-
-Manage laundry services
-
-Manage employee accounts
-
-Monitor all transactions
+- Manage laundry services
+- Manage employee accounts
+- Monitor all transactions
 
 Receptionist
-
-View pending transactions
-
-Assign transactions to laundry staff
+- View pending transactions
+- Assign transactions to laundry staff
 
 Laundry Staff
-
-View assigned tasks
-
-Mark transactions as completed
+- View assigned tasks
+- Mark transactions as completed
 
 📘 Usage Guide
 For Customers
-
-Register an account
-
-Log in
-
-Create a laundry transaction
-
-Track transaction status and notifications
+1. Register an account
+2. Log in
+3. Create a laundry transaction
+4. Track transaction status and notifications
 
 For Admin
-
-Log in as admin
-
-Manage services
-
-Add or manage employees
-
-Monitor transactions
+1. Log in as admin
+2. Manage services
+3. Add or manage employees
+4. Monitor transactions
 
 For Receptionist
-
-Log in
-
-View unassigned transactions
-
-Assign transactions to laundry staff
+1. Log in
+2. View unassigned transactions
+3. Assign transactions to laundry staff
 
 For Laundry Staff
-
-Log in
-
-View assigned jobs
-
-Mark jobs as completed
-
-⚙️ Assumptions
-
-Users provide valid date formats (YYYY-MM-DD)
-
-Email domains are validated based on role
-
-Passwords are stored as plain text (for academic/demo purposes only)
-
-Each transaction follows a linear lifecycle (Pending → Finished)
-
-One staff member handles one transaction at a time
+1. Log in
+2. View assigned jobs
+3. Mark jobs as completed
 
 🛠️ Technologies Used
-
-Java
-
-JavaFX
-
-MySQL
-
-JDBC
-
-MVC Design Pattern
+- Java
+- JavaFX
+- MySQL
+- JDBC
+- MVC Design Pattern
 
 🚀 How to Run
+1. Clone the repository
+2. Import the project into an IDE (Eclipse / IntelliJ)
+3. Configure MySQL database and credentials
+4. Run Main.java
 
-Clone the repository
-
-Import the project into an IDE (Eclipse / IntelliJ)
-
-Configure MySQL database and credentials
-
-Run Main.java
 Upcoming Features
 - Firing Employee
 - Notifications Modifications
